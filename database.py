@@ -1,7 +1,15 @@
 from sqlalchemy import create_engine, text
+import os 
+db_connection_string = os.environ['DB_CONNECTION_STRING']
 
-engine=create_engine("mysql+pymysql://admin:1234admin@database-1.cdw48ouoa6gy.eu-north-1.rds.amazonaws.com/projects?charset=utf8mb4")
+engine = create_engine(db_connection_string)
 
-with engine.connect() as conn:
-  result = conn.execute(text("select * from trial"))
-  print(result.all())
+
+
+def load_projects_from_db():
+  with engine.connect() as conn:
+    result = conn.execute(text("select * from myproject"))
+    myproject = []
+    for row in result.all():
+      myproject.append(dict(row._mapping))
+    return myproject
