@@ -1,27 +1,27 @@
 <!DOCTYPE html>
 <html>
   <head>
+  <body>
     
     <title>{{myname}} Layan projects</title>
-{% include 'bootstrap.html' %}
+    {% include 'bootstrap.html' %}
     
-     </head>
+  </head>
 <body>
   <div class="container">
-  <h1 class="text-center"> Layan projects </h1>
+  <h1 class="text-center"> {{myname}} projects </h1>
   {% include 'banner.html' %}
-  <h2 class="text-center"> Layan projects </h2>
-  <div>It is a long-established fact that a reader will be distracted by the readable content of a page when looking at its layout. The point of using Lorem Ipsum is that it has a more-or-less normal distribution of letters, as opposed to using 'Content here, content here', making it look like readable English. Many desktop publishing packages and web page editors now use Lorem Ipsum as their default model text, and a search for 'Lorem ipsum' will uncover many websites still in their infancy. Various versions have evolved over the years, sometimes by accident, sometimes on purpose (injected humor and the like).</div>
+  <h2 class="text-center"> About me </h2>
+  <div>Hi, I'm Layan, an AI practitioner at Armco Digital. I'm passionate about using AI to solve real-world problems and make a positive impact. I'm particularly skilled in Python programming, and I've used it to develop a number of successful AI projects.</div>
   <h2>project</h2>
 <div>
   {% for item in myskills %}
-    {% include 'myprojects.html'%}
-      {% endfor %}
-  </div>
-  <div class="text-center">
-    
+  {% include 'myprojects.html'%}
+    {% endfor %}
+</div>
+<div class="text-center">
   <a href="/contactme" type="button" class="btn btn-primary">Contact Me</a>
-    <p>copy right,{{myname}}</p>
+<p>copy right,{{myname}}</p>
   </div>
 </body>
 </html>

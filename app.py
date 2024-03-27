@@ -9,7 +9,7 @@ def hello_world():
   projects = load_projects_from_db()
   return render_template('home.html',
                          myskills=projects,
-                         myname='layan AlGhamdi')
+                         myname='Layan AlGhamdi')
 
 
 @app.route("/project/<id>")

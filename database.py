@@ -17,6 +17,8 @@ def load_projects_from_db():
 def load_project_from_db(id):
   with engine.connect() as conn:
     result = conn.execute(text(f"select * from myproject where id = {id}"))
+    rows = result.all()
+    return dict(rows[0]._mapping)               
 
 def add_message_to_db(data):
   with engine.connect() as conn:
